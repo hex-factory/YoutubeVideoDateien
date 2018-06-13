@@ -1,0 +1,5 @@
+Boad Support Package:	BSP_DISCO_F746NG	Revision:	2 (2:458ab1edf6b2)
+Grahical Userinterface:	F746_GUI		Revision:	17 (17:483926be0cf1)
+LCD Treiber:		LCD_DISCO_F746NG	Revision:	0 (0:d44525b1de98)
+Touchscreen:		TS_DISCO_F746NG		Revision:	0 (0:ecae68a77c28)
+MBED:			mbed			Revision:	121 (121:6c34061e7c34)
