@@ -1,0 +1,162 @@
+format_version: '2'
+name: My Project
+versions:
+  api: '1.0'
+  backend: 1.2.132
+  commit: release1.2
+  content: 1.0.898
+  content_pack_name: unknown
+  format: '2'
+  frontend: 1.2.1708
+board:
+  identifier: CustomBoard
+  device: ATmega168PB-MU
+details: null
+application: null
+middlewares: {}
+drivers:
+  CPU:
+    user_label: CPU
+    definition: 'Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::CPU::driver_config_definition::SYSCTRL::Drivers:SYSCTRL:'
+    functionality: System
+    api: 'Drivers:SYSCTRL:'
+    configuration:
+      async_input_speed: 32768
+      clkadc_oscillator: Input clock
+      clkasy_oscillator: Async input clock
+      clkcpu_oscillator: Input clock
+      clkio_oscillator: Input clock
+      clkptc_oscillator: Input clock
+      cpu_clock_source: CLKcpu
+      cpu_sreg_i: false
+      enable_async_input: true
+      enable_clkadc: true
+      enable_clkasy: true
+      enable_clkcpu: true
+      enable_clkio: true
+      enable_clkptc: true
+      enable_core_clock: true
+      enable_input: true
+      input_speed: 16000000
+      pm_ivsel: Interrupt vector placed at the beginning of main FLASH memory
+      pm_pud: false
+      pm_se: false
+      pm_sm: Idle
+      prescaler_divider: '16'
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: Core
+          input: Core
+        configuration: {}
+  TIMER_1:
+    user_label: TIMER_1
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::TC0::driver_config_definition::TC8.Mode.3.Fast.PWM::Drivers:TC8:Init
+    functionality: Timer
+    api: Drivers:TC8:Init
+    configuration:
+      inc_isr_harness: false
+      tc8_coma: Clear OCA on Compare Match, set OCA on BOTTOM (non-inverting mode)
+      tc8_comb: Set OCB on Compare Match, clear OCB on BOTTOM (inverting mode)
+      tc8_cs: No prescaling
+      tc8_ociea: false
+      tc8_ocieb: false
+      tc8_orca: 127
+      tc8_orcb: 63
+      tc8_psrasy: false
+      tc8_psrsync: false
+      tc8_toie: false
+      tc8_tsm: false
+    optional_signals:
+    - identifier: TIMER_1:OCA
+      pad: PD6
+      mode: Enabled
+      configuration: null
+      definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::optional_signal_definition::TC0.OCA
+      name: TC0/OCA
+      label: OCA
+    - identifier: TIMER_1:OCB
+      pad: PD5
+      mode: Enabled
+      configuration: null
+      definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::optional_signal_definition::TC0.OCB
+      name: TC0/OCB
+      label: OCB
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: TC8
+          input: CLKio
+        configuration:
+          tc8_clock_source: CLKio
+  TIMER_0:
+    user_label: TIMER_0
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::TC2::driver_config_definition::TC8.Mode.1.Phase.Correct::Drivers:TC8:Init
+    functionality: Timer
+    api: Drivers:TC8:Init
+    configuration:
+      inc_isr_harness: false
+      tc8_async_exclk: false
+      tc8_coma: Clear OCA on up-counting, set OCA on down-counting
+      tc8_comb: Set OCB on up-couting, clear OCB on down-counting
+      tc8_cs: No prescaling
+      tc8_ociea: false
+      tc8_ocieb: false
+      tc8_orca: 127
+      tc8_orcb: 63
+      tc8_psrasy: false
+      tc8_psrsync: false
+      tc8_toie: false
+      tc8_tsm: false
+    optional_signals:
+    - identifier: TIMER_0:OCA
+      pad: PB3
+      mode: Enabled
+      configuration: null
+      definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::optional_signal_definition::TC2.OCA
+      name: TC2/OCA
+      label: OCA
+    - identifier: TIMER_0:OCB
+      pad: PD3
+      mode: Enabled
+      configuration: null
+      definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::optional_signal_definition::TC2.OCB
+      name: TC2/OCB
+      label: OCB
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: TC2
+          input: CLKio
+        configuration:
+          tc2_clock_source: CLKio
+pads:
+  PD3:
+    name: PD3
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::pad::PD3
+    mode: Digital output
+    user_label: PD3
+    configuration: null
+  PD5:
+    name: PD5
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::pad::PD5
+    mode: Digital output
+    user_label: PD5
+    configuration: null
+  PD6:
+    name: PD6
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::pad::PD6
+    mode: Digital output
+    user_label: PD6
+    configuration: null
+  PB3:
+    name: PB3
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-MU::pad::PB3
+    mode: Digital output
+    user_label: PB3
+    configuration: null
+toolchain_options: []
