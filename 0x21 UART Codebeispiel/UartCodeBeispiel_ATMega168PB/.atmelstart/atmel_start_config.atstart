@@ -1,0 +1,112 @@
+format_version: '2'
+name: My Project
+versions:
+  api: '1.0'
+  backend: 1.4.93
+  commit: 9c29f8365cf76e9937d19b1e765a83bc7a80e4e9
+  content: 1.0.1255
+  content_pack_name: acme-packs-all
+  format: '2'
+  frontend: 1.4.1787
+board:
+  identifier: CustomBoard
+  device: ATmega168PB-AU
+details: null
+application: null
+middlewares: {}
+drivers:
+  CPU:
+    user_label: CPU
+    definition: 'Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-AU::CPU::driver_config_definition::SYSCTRL::Drivers:SYSCTRL:'
+    functionality: System
+    api: 'Drivers:SYSCTRL:'
+    configuration:
+      async_input_speed: 32768
+      clkadc_oscillator: Input clock
+      clkasy_oscillator: Async input clock
+      clkcpu_oscillator: Input clock
+      clkio_oscillator: Input clock
+      clkptc_oscillator: Input clock
+      cpu_clock_source: CLKcpu
+      cpu_sreg_i: true
+      enable_async_input: true
+      enable_clkadc: true
+      enable_clkasy: true
+      enable_clkcpu: true
+      enable_clkio: true
+      enable_clkptc: true
+      enable_core_clock: true
+      enable_input: true
+      input_speed: 16000000
+      pm_ivsel: Interrupt vector placed at the beginning of main FLASH memory
+      pm_pud: false
+      pm_se: false
+      pm_sm: Idle
+      prescaler_divider: '1'
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: Core
+          input: Core
+        configuration: {}
+  USART_0:
+    user_label: USART_0
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-AU::USART0::driver_config_definition::Asynchronous.Mode::Drivers:USART:Init
+    functionality: USART
+    api: Drivers:USART:Init
+    configuration:
+      inc_isr_harness: true
+      usart_baud_rate: 1000000
+      usart_mpcm: false
+      usart_rxcie: true
+      usart_rxen: true
+      usart_rxsie: false
+      usart_sfde: false
+      usart_txcie: false
+      usart_txen: true
+      usart_ucpha: Sample data on the first edge of XCK
+      usart_ucpol: false
+      usart_ucsz: 8-bit
+      usart_udord: MSB is transmitted first
+      usart_udrie: true
+      usart_upm: Disabled
+      usart_usbs: 1-bit
+    optional_signals: []
+    variant:
+      specification: UMSEL=0
+      required_signals:
+      - name: USART0/RXD
+        pad: PD0
+        label: RXD
+      - name: USART0/TXD
+        pad: PD1
+        label: TXD
+    clocks:
+      domain_group:
+        nodes:
+        - name: USART
+          input: CLKio
+        configuration:
+          usart_clock_source: CLKio
+pads:
+  LED:
+    name: PB5
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-AU::pad::PB5
+    mode: Digital output
+    user_label: LED
+    configuration: null
+  UART_RX:
+    name: PD0
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-AU::pad::PD0
+    mode: Digital input
+    user_label: UART_RX
+    configuration: null
+  UART_TX:
+    name: PD1
+    definition: Atmel:ATMega48_88_168pb_drivers:1.0.0::ATmega168PB-AU::pad::PD1
+    mode: Digital output
+    user_label: UART_TX
+    configuration: null
+toolchain_options: []
