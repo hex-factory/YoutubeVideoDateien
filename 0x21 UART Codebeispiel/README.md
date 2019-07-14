@@ -7,3 +7,6 @@ zu kommunizieren, hilft euch dieses Video weiter.
 Im Video wird ein Programm für den Mikrocontroller 
 ATmega168PB erstellt, welches in der Lage ist Daten 
 an die COM-Schnittstelle des PCs zu übertragen.  
+
+
+Atmel Studio Version 7.0.1645

@@ -9,3 +9,6 @@ und ATMEL Start aufgesetzt und anschließend das Ergebnis mit dem Oszilloskop ve
 Wir hoffen das Video hilft euch den PWM Modus besser zu verstehen 
 und den Einstieg für eure eigenen Projekte zu vereinfachen. 
 Viel Spaß beim Anschauen :)
+
+
+Atmel Studio Version 7.0.1645
